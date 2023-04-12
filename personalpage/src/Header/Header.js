@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {AppBar,Box,Toolbar,Typography,Container,Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
-const pages = ['Main Page', 'About', 'Contact'];
 
 const Header = () => {
       return (
@@ -26,14 +26,21 @@ const Header = () => {
                 SIMCHI
               </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                {pages.map((page) => (
-                  <Button
-                    key={page}
-                    sx={{ my: 2, color: 'white', display: 'block' }}
-                  >
-                    {page}
-                  </Button>
-                ))}
+                  <Link to='/' >
+                    <Button sx={{ my: 2, color: 'white', display: 'block' }}>
+                      Main
+                    </Button>
+                  </Link>
+                  <Link to='/About' >
+                    <Button sx={{ my: 2, color: 'white', display: 'block' }}>
+                      About
+                    </Button>
+                  </Link>
+                  <Link to='/Contact' >
+                    <Button sx={{ my: 2, color: 'white', display: 'block' }}>
+                      Contact
+                    </Button>
+                  </Link>
             </Box>
             </Toolbar>
           </Container>
