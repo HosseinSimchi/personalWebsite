@@ -5,15 +5,19 @@ import Header from '../Header/Header';
 
 const Contact = () => {
     const [showThanks, setShowThanks] = useState(false);
+    const [Name, setName] = useState('');
+    const [Email, setEmail] = useState('');
+    const [Comment, setComment] = useState('');
 
     const getForm = () => {
         return (
             <>
-                <TextField id="outlined-basic" label="Name" variant="outlined" />
+                <TextField onChange={(e) => setName(e.target.value)} id="outlined-basic" label="Name" variant="outlined" />
                 <br /><br /><br />
-                <TextField id="outlined-basic" label="Email" variant="outlined" />
+                <TextField onChange={(e) => setEmail(e.target.value)} id="outlined-basic" label="Email" variant="outlined" />
                 <br /><br /><br />
                 <TextField
+                    onChange={(e) => setComment(e.target.value)}
                     id="outlined-multiline-static"
                     label="Comments"
                     multiline
@@ -30,7 +34,16 @@ const Contact = () => {
         return (
             <>
                 <Typography variant="h6" component="h6">
-                    Thank you!
+                    <br />
+                    your name : {Name}
+                    <br /><br />
+                    your name : {Email}
+                    <br /><br />
+                    your name : {Comment}
+                    <br /><br />
+
+                    Thanks
+                    <br />
                 </Typography>
             </>
         )
